@@ -1,0 +1,45 @@
+.centered-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.header-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    border: 1px solid orangered ;
+    border-radius: 100px;
+}
+
+.card-grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 520px;
+    gap: 40px;
+    padding: 40px;
+}
+
+.card {
+    border: 1px solid orangered;
+    border-radius: 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+}
