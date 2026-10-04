@@ -30,4 +30,5 @@ export let gameState = {
     firstCardId: '',
     passCounter: 0,
     pairFoundedCounter: 0,
+    disableOpeningCard: false
 };

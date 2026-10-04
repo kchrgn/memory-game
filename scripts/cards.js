@@ -1,5 +1,5 @@
 import { createUserElement } from "./create-element.js";
-import { cardHandler } from "./game-engine.js";
+import { passHandler } from "./game-engine.js";
 
 function createCard ( container, data, index ) {
     const cardContainer = createUserElement (container, 'div', '', 'card-container');
@@ -16,7 +16,7 @@ export function renderCardSet (data) {
     for (let i = 0; i < 16; i++) {
         const card = createCard(container, data[i], i);
         card.addEventListener('click', () => {
-            cardHandler(`card${i}`, data[i].pairId);
+            passHandler(`card${i}`, data[i].pairId);
         });
     }
 }
