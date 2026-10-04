@@ -5,7 +5,7 @@ function createCard ( container, data, index ) {
     const cardContainer = createUserElement (container, 'div', '', 'card-container');
     const card = createUserElement (cardContainer, 'div', `card${index}`, 'card');
     card.dataset.pairId = data.pairId;
-    createUserElement (card, 'div', '', 'card-front', data.img);
+    createUserElement (card, 'div', '', 'card-front', '');
     createUserElement (card, 'div', '', 'card-back', data.img);
     return card;
 }

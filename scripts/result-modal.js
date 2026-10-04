@@ -7,7 +7,7 @@ export function createResultWindow () {
     const resultContainer = createUserElement (document.body, 'dialog', 'result-window', 'modal-window', '');
     createUserElement (resultContainer, 'h1', '', '', 'YOU WIN!');
     createUserElement (resultContainer, 'h3', 'result-pass-counter', '', '');
-    
+
     const newGameButton = createUserElement(resultContainer, 'div', 'new-game-button', 'modal-window-button', 'Новая игра');
     newGameButton.addEventListener('click', () => {
         resultContainer.close();

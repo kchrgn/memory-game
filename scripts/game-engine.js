@@ -1,7 +1,7 @@
 import { renderCardSet } from "./cards.js";
 import { cardSet, shuffleCardSet } from "./game-data.js";
 import { gameState } from "./game-data.js";
-import { showLiderTable } from "./lider-modal.js";
+import { saveResult } from "./local-storage.js";
 import { showResultWindow } from "./result-modal.js";
 
 export function startGame () {
@@ -33,7 +33,10 @@ export function passHandler(cardId, pairId) {
             }, 1000);
         } else {
             gameState.pairFoundedCounter += 1
-            if (gameState.pairFoundedCounter === 8) showResultWindow();
+            if (gameState.pairFoundedCounter === 8) {
+                saveResult();
+                showResultWindow();
+             };
         }
 
         gameState.firstCardId = '';
