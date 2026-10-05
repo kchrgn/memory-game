@@ -1,3 +1,5 @@
+export const PAIRS_QUANTITY = 8;
+
 export const cardSet = [
     {img: '1', pairId: '1'},
     {img: '1', pairId: '1'},

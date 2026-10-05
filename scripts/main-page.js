@@ -1,8 +1,9 @@
 import { renderCardSet } from './cards.js';
 import { createUserElement } from './create-element.js';
+import { gameState } from './game-data.js';
 import { startGame } from './game-engine.js';
-import { createLiderTableWindow, showLiderTable } from './lider-modal.js';
-import { createResultWindow } from './result-modal.js';
+import { createLiderTableWindow, showLiderTable } from './lider-window.js';
+import { createResultWindow } from './result-window.js';
 
 export function createMainPage() {
     const body = document.body;
@@ -27,4 +28,17 @@ export function createMainPage() {
 
     createLiderTableWindow();
     createResultWindow();
+}
+
+export function renderCounters () {
+    const gameStatus = document.getElementById('game-status');
+    const passCounter = document.getElementById('pass-counter');
+    const pairFounded = document.getElementById('pair-founded');
+    if (gameState.gameStarted) {
+        gameStatus.textContent = 'ИГРА НАЧАТА'
+    } else {
+        gameStatus.textContent = 'ИГРА ЗАКОНЧЕНА'      
+    }
+    passCounter.textContent = `Выполнено ходов: ${gameState.passCounter}`;
+    pairFounded.textContent = `Найдено пар: ${gameState.pairFoundedCounter} из 8`
 }

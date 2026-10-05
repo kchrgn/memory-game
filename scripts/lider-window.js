@@ -1,17 +1,18 @@
 import { createUserElement } from "./create-element.js";
 import { startGame } from "./game-engine.js";
+import { closeModalWindow, createModalWindow, showModalWindow } from "./modal.js";
 
 
 export function createLiderTableWindow () {
-    const liderTableContainer = createUserElement (document.body, 'dialog', 'lider-table-container', 'modal-window', '');
-    
+    const liderTableContainer = createModalWindow('lider-window');
+
     createUserElement(liderTableContainer, 'h2', '', '', 'Лучшие 10 результатов');
     createUserElement(liderTableContainer, 'h3', '', '', `Место             Число ходов             Дата`);
     createUserElement(liderTableContainer, 'div', 'lider-table', '', '');
 
     const closeButton = createUserElement(liderTableContainer, 'div', 'close-button', 'modal-window-button', 'Закрыть');
     closeButton.addEventListener('click', () => {
-        liderTableContainer.close();
+        closeModalWindow('lider-window');
     });
 }
 
@@ -27,6 +28,5 @@ export function showLiderTable () {
             createUserElement(liderTable, 'p', '', '', `         ${index+1}                               ${data.passCount}                           ${data.date}`)
         });
     }
-    document.getElementById('lider-table-container').showModal();
-
+    showModalWindow('lider-window');
 } 
