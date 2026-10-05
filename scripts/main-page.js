@@ -19,6 +19,7 @@ export function createMainPage() {
     const mainWrapper = createUserElement(mainContainer, 'div', '', 'mainContainer', '');
     
     const passContainer = createUserElement(mainWrapper, 'div', '', 'pass-container', '');
+    createUserElement(passContainer, 'div', 'game-status', 'game-status', 'ИГРА НАЧАТА');
     createUserElement(passContainer, 'div', 'pass-counter', 'text-counters', 'Выполнено ходов: 0');
     createUserElement(passContainer, 'div', 'pair-founded', 'text-counters', 'Найдено пар: 0');
 

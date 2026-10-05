@@ -6,7 +6,7 @@ export function createLiderTableWindow () {
     const liderTableContainer = createUserElement (document.body, 'dialog', 'lider-table-container', 'modal-window', '');
     
     createUserElement(liderTableContainer, 'h2', '', '', 'Лучшие 10 результатов');
-    createUserElement(liderTableContainer, 'h3', '', '', `Место         Число ходов         Дата`);
+    createUserElement(liderTableContainer, 'h3', '', '', `Место             Число ходов             Дата`);
     createUserElement(liderTableContainer, 'div', 'lider-table', '', '');
 
     const closeButton = createUserElement(liderTableContainer, 'div', 'close-button', 'modal-window-button', 'Закрыть');
@@ -24,7 +24,7 @@ export function showLiderTable () {
         const content = JSON.parse(localStorage.getItem('memoryGameData'));
         liderTable.replaceChildren()
         content.map((data, index) => {
-            createUserElement(liderTable, 'p', '', '', `${index+1}                        ${data.passCount}                                 ${data.date}`)
+            createUserElement(liderTable, 'p', '', '', `         ${index+1}                               ${data.passCount}                           ${data.date}`)
         });
     }
     document.getElementById('lider-table-container').showModal();
