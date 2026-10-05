@@ -21,7 +21,7 @@ export function createResultWindow () {
 
 export function showResultWindow () {
     const resultPassCounter = document.getElementById('result-pass-counter');
-    resultPassCounter.textContent = `Вы открыли все карточки за ${gameState.passCounter} ходов`;
+    resultPassCounter.textContent = `Количество ходов ${gameState.passCounter}. Все карточки открыты`;
     document.getElementById('result-window').showModal();
 
 } 

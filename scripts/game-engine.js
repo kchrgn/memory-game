@@ -48,5 +48,5 @@ function renderCounters () {
     const passCounter = document.getElementById('pass-counter');
     const pairFounded = document.getElementById('pair-founded');
     passCounter.textContent = `Выполнено ходов: ${gameState.passCounter}`;
-    pairFounded.textContent = `Найдено пар: ${gameState.pairFoundedCounter}`
+    pairFounded.textContent = `Найдено пар: ${gameState.pairFoundedCounter} из 8`
 }
