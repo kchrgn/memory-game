@@ -1,8 +1,9 @@
 import { renderCardSet } from "./cards.js";
-import { cardSet, shuffleCardSet } from "./game-data.js";
+import { cardSet, PAIRS_QUANTITY, shuffleCardSet } from "./game-data.js";
 import { gameState } from "./game-data.js";
 import { saveResult } from "./local-storage.js";
-import { showResultWindow } from "./result-modal.js";
+import { renderCounters } from "./main-page.js";
+import { showResultWindow } from "./result-window.js";
 
 export function startGame () {
     gameState.firstCardId = '';
@@ -16,8 +17,6 @@ export function startGame () {
 }
 
 export function passHandler(cardId, pairId) {
-    const PAIRS_QUANTITY = 8;
-
     if (gameState.disableOpeningCard) return;
     
     const currCard = document.getElementById(cardId);
@@ -47,17 +46,4 @@ export function passHandler(cardId, pairId) {
         gameState.firstCardId = '';
     }
     renderCounters();
-}
-
-function renderCounters () {
-    const gameStatus = document.getElementById('game-status');
-    const passCounter = document.getElementById('pass-counter');
-    const pairFounded = document.getElementById('pair-founded');
-    if (gameState.gameStarted) {
-        gameStatus.textContent = 'ИГРА НАЧАТА'
-    } else {
-        gameStatus.textContent = 'ИГРА ЗАКОНЧЕНА'      
-    }
-    passCounter.textContent = `Выполнено ходов: ${gameState.passCounter}`;
-    pairFounded.textContent = `Найдено пар: ${gameState.pairFoundedCounter} из 8`
 }
